@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ever After — Invitation Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet" />
+    <style>
+      :root { --ink:#253c35; --forest:#173b32; --sage:#9dad8d; --cream:#f6f1e7; --paper:#fffcf5; --terracotta:#c36e52; --line:#d8dfd0; }
+      * { box-sizing: border-box; }
+      body { margin:0; font-family:"DM Sans",sans-serif; color:var(--ink); background:var(--cream); }
+      button,input,textarea { font:inherit; }
+      .app { min-height:100vh; display:grid; grid-template-columns:390px 1fr; }
+      .panel { background:#fbfaf5; padding:38px 34px; border-right:1px solid #e5e6dc; overflow:auto; }
+      .brand { display:flex; align-items:center; gap:11px; margin-bottom:37px; font-family:"Cormorant Garamond",serif; font-size:25px; font-weight:600; letter-spacing:.02em; }
+      .brand-mark { width:31px;height:31px;display:grid;place-items:center;border:1px solid var(--sage);border-radius:50%; color:var(--terracotta); font-size:18px; }
+      .eyebrow { margin:0 0 8px; color:#758078; text-transform:uppercase; letter-spacing:.16em; font-size:10px; font-weight:600; }
+      h1 { font-family:"Cormorant Garamond",serif; font-size:34px; line-height:1; margin:0 0 12px; font-weight:600; }
+      .intro { margin:0 0 28px; color:#69756d; font-size:13px; line-height:1.6; }
+      .section { padding:20px 0; border-top:1px solid #e4e6de; }
+      .section-title { display:flex; justify-content:space-between; margin-bottom:15px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; font-weight:600; }
+      .section-title span { color:#8c968d; font-size:11px; letter-spacing:0; text-transform:none; font-weight:400; }
+      .field-grid { display:grid; grid-template-columns:1fr 1fr; gap:13px; }
+      .field { display:flex; flex-direction:column; gap:6px; }
+      .field.full { grid-column:1 / -1; }
+      label { font-size:11px; color:#677269; }
+      input, textarea { border:1px solid #dce0d7; background:#fffefa; border-radius:5px; padding:10px 11px; outline:none; color:var(--ink); font-size:13px; transition:border .2s, box-shadow .2s; }
+      input:focus,textarea:focus { border-color:var(--sage); box-shadow:0 0 0 3px #dfe8d840; }
+      textarea { resize:vertical; min-height:68px; }
+      .themes { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+      .theme { height:57px; border-radius:6px; border:2px solid transparent; cursor:pointer; position:relative; overflow:hidden; transition:transform .2s; }
+      .theme:hover { transform:translateY(-2px); }
+      .theme.active { border-color:var(--forest); }
+      .theme span { position:absolute; bottom:5px; left:7px; font-size:9px; color:white; font-weight:600; text-shadow:0 1px 2px #0006; }
+      .meadow { background:linear-gradient(135deg,#24483b,#99ad84); }.blush { background:linear-gradient(135deg,#8c4f59,#efc7bd); }.midnight { background:linear-gradient(135deg,#1b2738,#a89060); }
+      .actions { display:flex; gap:10px; padding-top:25px; }
+      .actions button { border:0;border-radius:5px;padding:12px 16px;cursor:pointer;font-size:12px;font-weight:600; }
+      .primary { background:var(--forest);color:#fff;flex:1; }.secondary { background:#e7e9df;color:var(--forest); }
+      .stage { min-height:100vh; padding:32px; display:flex; flex-direction:column; background:radial-gradient(circle at 80% 10%,#e8eadb 0,transparent 27%),var(--cream); }
+      .stage-top { display:flex;justify-content:space-between;align-items:center; margin-bottom:23px; color:#65726a; font-size:12px; }
+      .status { display:flex;align-items:center;gap:7px; }.dot { width:7px;height:7px;border-radius:50%;background:#6f956b; }
+      .zoom { display:flex;gap:4px;align-items:center; }.zoom button { background:transparent;border:0;color:#7b877e;cursor:pointer;font-size:18px; }
+      .canvas { flex:1; display:grid; place-items:center; padding-bottom:25px; }
+      .invitation { --accent:var(--forest); width:min(600px, 100%); aspect-ratio: .72; background:var(--paper); position:relative; box-shadow:0 22px 50px #5761502b; overflow:hidden; text-align:center; padding:50px 55px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+      .invitation:before,.invitation:after { content:""; position:absolute; width:240px;height:240px; border:1px solid var(--line); border-radius:48% 52% 38% 62%; opacity:.8; }
+      .invitation:before { left:-130px;top:-104px; transform:rotate(32deg); }.invitation:after { right:-145px;bottom:-110px; transform:rotate(210deg); }
+      .frame { position:absolute; inset:15px; border:1px solid #d6dfd0; pointer-events:none; }
+      .leaf { position:absolute;font-size:66px;color:var(--sage); opacity:.7; font-family:serif; line-height:1; }.leaf.one{left:21px;top:24px;transform:rotate(-26deg)}.leaf.two{right:25px;bottom:22px;transform:rotate(146deg)}
+      .invite-kicker { z-index:1; font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#77846f;margin-bottom:26px; }
+      .ornament { color:var(--terracotta);font-size:20px;margin-bottom:13px; }.names { z-index:1;font-family:"Great Vibes",cursive; font-size:76px;line-height:.77;color:var(--accent);font-weight:400; }
+      .and { z-index:1;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:28px;color:var(--terracotta);margin:10px 0 6px; }.request {z-index:1; max-width:290px; font-family:"Cormorant Garamond",serif;font-size:18px;line-height:1.25;color:#4d5e54;margin:16px 0 25px;}
+      .rule { z-index:1;width:44px;height:1px;background:var(--terracotta);margin-bottom:17px; }.date { z-index:1;font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600;letter-spacing:.06em;color:var(--accent);text-transform:uppercase; }.time { z-index:1;font-size:11px;letter-spacing:.15em;margin-top:6px;color:#657267; }.venue { z-index:1;margin-top:27px;font-family:"Cormorant Garamond",serif;font-size:19px;line-height:1.15;color:var(--accent); }.venue small {display:block;font-family:"DM Sans",sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:9px;color:#778279;margin-top:6px;}
+      .meadow-theme { --accent:#173b32; --sage:#9dad8d; --terracotta:#c36e52; --line:#d8dfd0; }.blush-theme { --accent:#7b414c; --sage:#d8a6a2; --terracotta:#ba7668; --line:#ead4d0; }.midnight-theme { --accent:#203349; --sage:#b7a471; --terracotta:#a27648; --line:#dbd4bd; }
+      .footer { text-align:center;color:#89938b;font-size:11px; }.footer strong {color:#5d7063;}
+      @media (max-width:800px) { .app{grid-template-columns:1fr}.panel{border-right:0;border-bottom:1px solid #e5e6dc}.stage{min-height:auto;padding:21px}.invitation{max-width:500px}.names{font-size:62px} }
+      @media print { .panel,.stage-top,.footer{display:none}.app{display:block}.stage{padding:0;background:#fff}.canvas{display:block}.invitation{width:100%;height:100vh;box-shadow:none;max-width:none;aspect-ratio:auto} }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <aside class="panel">
+        <div class="brand"><div class="brand-mark">✦</div> Ever After</div>
+        <p class="eyebrow">Invitation studio</p><h1>Create your invitation</h1><p class="intro">A warm, personal invitation in a few thoughtful details.</p>
+        <section class="section"><div class="section-title">The couple <span>required</span></div><div class="field-grid"><div class="field"><label for="partner1">First name</label><input id="partner1" value="Ananya"></div><div class="field"><label for="partner2">First name</label><input id="partner2" value="Arjun"></div></div></section>
+        <section class="section"><div class="section-title">The celebration</div><div class="field-grid"><div class="field full"><label for="date">Date</label><input id="date" type="date" value="2026-12-06"></div><div class="field"><label for="time">Time</label><input id="time" value="6:30 PM"></div><div class="field"><label for="venue">Venue</label><input id="venue" value="The Olive Grove"></div><div class="field full"><label for="location">City / location line</label><input id="location" value="Bangalore, India"></div></div></section>
+        <section class="section"><div class="section-title">Your message</div><div class="field"><label for="message">Invitation wording</label><textarea id="message">Together with their families, request the pleasure of your company as they begin their next chapter.</textarea></div></section>
+        <section class="section"><div class="section-title">Choose a mood</div><div class="themes"><button class="theme meadow active" data-theme="meadow-theme"><span>Meadow</span></button><button class="theme blush" data-theme="blush-theme"><span>Blush</span></button><button class="theme midnight" data-theme="midnight-theme"><span>Midnight</span></button></div></section>
+        <div class="actions"><button class="primary" id="print">Print / Save PDF</button><button class="secondary" id="reset" title="Reset invitation">Reset</button></div>
+      </aside>
+      <section class="stage"><div class="stage-top"><div class="status"><i class="dot"></i> Changes saved locally</div><div class="zoom"><button id="zoomOut" aria-label="Zoom out">−</button><span id="zoomLabel">100%</span><button id="zoomIn" aria-label="Zoom in">+</button></div></div>
+        <div class="canvas"><article class="invitation meadow-theme" id="invitation"><div class="frame"></div><div class="leaf one">❧</div><div class="leaf two">❧</div><div class="invite-kicker">Wedding invitation</div><div class="ornament">✦</div><div class="names" id="names">Ananya<br>Arjun</div><div class="and">&amp;</div><p class="request" id="previewMessage">Together with their families, request the pleasure of your company as they begin their next chapter.</p><div class="rule"></div><div class="date" id="previewDate">Sunday, December 6, 2026</div><div class="time" id="previewTime">6:30 PM</div><div class="venue" id="previewVenue">The Olive Grove<small id="previewLocation">Bangalore, India</small></div></article></div>
+        <div class="footer">Designed with <strong>Ever After</strong> · Your details stay in your browser</div>
+      </section>
+    </main>
+    <script>
+      const ids=['partner1','partner2','date','time','venue','location','message']; const el=id=>document.getElementById(id); let zoom=100;
+      const values=()=>Object.fromEntries(ids.map(id=>[id,el(id).value]));
+      function update(){ const v=values(); el('names').innerHTML=`${v.partner1||'First name'}<br>${v.partner2||'First name'}`; el('previewMessage').textContent=v.message; el('previewTime').textContent=v.time; el('previewVenue').childNodes[0].nodeValue=v.venue; el('previewLocation').textContent=v.location; const d=new Date(v.date+'T12:00:00'); el('previewDate').textContent=Number.isNaN(d)?'Choose a date':d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'}); localStorage.setItem('ever-after-invite',JSON.stringify(v)); }
+      ids.forEach(id=>el(id).addEventListener('input',update));
+      const saved=localStorage.getItem('ever-after-invite'); if(saved){try{Object.entries(JSON.parse(saved)).forEach(([k,v])=>el(k).value=v)}catch(e){}} update();
+      document.querySelectorAll('.theme').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.theme').forEach(b=>b.classList.remove('active'));btn.classList.add('active');el('invitation').className='invitation '+btn.dataset.theme;}));
+      function setZoom(n){zoom=Math.max(70,Math.min(120,n));el('invitation').style.transform=`scale(${zoom/100})`;el('zoomLabel').textContent=zoom+'%';document.querySelector('.canvas').style.minHeight=(zoom>100?650*zoom/100:650)+'px';} el('zoomIn').onclick=()=>setZoom(zoom+10);el('zoomOut').onclick=()=>setZoom(zoom-10);
+      el('print').onclick=()=>window.print(); el('reset').onclick=()=>{localStorage.removeItem('ever-after-invite');location.reload()};
+    </script>
+  </body>
+</html>
