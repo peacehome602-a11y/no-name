@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#07090f" />
     <meta name="description" content="A private wedding invitation." />
-    <title>Ananya &amp; Arjun — Wedding Invitation</title>
+    <title>Nabeel &amp; Sulaikha — Wedding Reception</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet" />
@@ -224,6 +224,7 @@
       .contact-actions { right: 20px; bottom: 94px; display: grid; gap: 10px; }
       .contact-actions[hidden] { display: none; }
       .contact-button { font-size: 17px; }
+      .contact-button[hidden] { display: none; }
       .contact-button--call { font-size: 15px; }
       .customize-button { position: fixed; z-index: 26; right: 18px; bottom: 19px; min-height: 50px; padding: 0 18px; border: 1px solid var(--gold); color: var(--gold-bright); background: rgba(7,9,15,.9); box-shadow: 0 8px 25px rgba(0,0,0,.28); cursor: pointer; font-size: 10px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; backdrop-filter: blur(10px); }
       .customize-button:hover { color: var(--night); background: var(--gold); }
@@ -313,10 +314,10 @@
     <div class="opening" id="opening" aria-label="Wedding invitation opening screen">
       <div class="curtain curtain--left"></div><div class="curtain curtain--right"></div>
       <div class="opening-content">
-        <p class="opening-kicker">Wedding invitation</p>
+        <p class="opening-kicker">Wedding reception</p>
         <div class="opening-monogram" id="openingMonogram" aria-hidden="true">A</div>
-        <h1><span id="openingPartner1">Ananya</span><em>&amp;</em><span id="openingPartner2">Arjun</span></h1>
-        <p class="opening-date" id="openingDate">Sunday, December 6, 2026</p>
+        <h1><span id="openingPartner1">Nabeel</span><em>&amp;</em><span id="openingPartner2">Sulaikha</span></h1>
+        <p class="opening-date" id="openingDate">Sunday, November 29, 2026</p>
         <button class="open-button" id="openInvitation" type="button">Open invitation</button>
       </div>
     </div>
@@ -329,9 +330,9 @@
         <div class="hero-portrait" aria-hidden="true"></div>
         <div class="hero-content">
           <p class="eyebrow">Together with their families</p>
-          <h1 class="hero-names"><span id="heroPartner1">Ananya</span><em>&amp;</em><span id="heroPartner2">Arjun</span></h1>
+          <h1 class="hero-names"><span id="heroPartner1">Nabeel</span><em>&amp;</em><span id="heroPartner2">Sulaikha</span></h1>
           <div class="ornament" aria-hidden="true"><span>✦</span></div>
-          <p class="hero-date" id="heroDate">Sunday, December 6, 2026</p>
+          <p class="hero-date" id="heroDate">Sunday, November 29, 2026</p>
           <a class="scroll-cue" href="#welcome"><span>Discover our day</span><i aria-hidden="true"></i></a>
         </div>
       </header>
@@ -343,7 +344,7 @@
             <p class="eyebrow">A celebration of love</p>
             <h2>We request the pleasure<br />of your company</h2>
             <p id="welcomeMessage">Together with their families, request the pleasure of your company as they begin their next chapter.</p>
-            <div class="countdown" id="countdown" aria-label="Countdown to the wedding">
+            <div class="countdown" id="countdown" aria-label="Countdown to the wedding reception">
               <div class="countdown-unit"><strong class="countdown-number" id="days">—</strong><span class="countdown-label">Days</span></div>
               <div class="countdown-unit"><strong class="countdown-number" id="hours">—</strong><span class="countdown-label">Hours</span></div>
               <div class="countdown-unit"><strong class="countdown-number" id="minutes">—</strong><span class="countdown-label">Minutes</span></div>
@@ -356,9 +357,9 @@
           <div class="section-inner">
             <div class="section-heading reveal"><p class="eyebrow">Save the date</p><h2>The details</h2><div class="ornament" aria-hidden="true"><span>❦</span></div></div>
             <div class="details-grid reveal-scale">
-              <article class="detail-card"><div class="detail-icon" aria-hidden="true">✦</div><h3>Date</h3><p class="detail-value" id="detailDate">Sunday, December 6, 2026</p></article>
-              <article class="detail-card"><div class="detail-icon" aria-hidden="true">◷</div><h3>Time</h3><p class="detail-value" id="detailTime">6:30 PM</p></article>
-              <article class="detail-card"><div class="detail-icon" aria-hidden="true">⌖</div><h3>Venue</h3><p class="detail-value" id="detailVenue">The Olive Grove</p><p id="detailLocation">Bangalore, India</p></article>
+              <article class="detail-card"><div class="detail-icon" aria-hidden="true">✦</div><h3>Date</h3><p class="detail-value" id="detailDate">Sunday, November 29, 2026</p></article>
+              <article class="detail-card"><div class="detail-icon" aria-hidden="true">◷</div><h3>Time</h3><p class="detail-value" id="detailTime">6:00 PM</p></article>
+              <article class="detail-card"><div class="detail-icon" aria-hidden="true">⌖</div><h3>Venue</h3><p class="detail-value" id="detailVenue">VGDM Hall</p><p id="detailLocation">Thazhathangady, Kottayam</p></article>
             </div>
             <div class="optional-details" id="optionalDetails" hidden>
               <article class="event-card" id="ceremonyCard" hidden><p class="eyebrow">Ceremony</p><h3 id="ceremonyTitle"></h3><p id="ceremonyInfo"></p></article>
@@ -372,7 +373,7 @@
           <div class="section-inner">
             <div class="section-heading reveal"><p class="eyebrow">The day unfolds</p><h2>Celebration timeline</h2></div>
             <div class="timeline reveal" id="timeline">
-              <article class="timeline-item"><span class="timeline-marker" aria-hidden="true">✦</span><p class="timeline-date" id="timelineDate">Sunday, December 6, 2026</p><h3>Wedding celebration</h3><p class="timeline-meta" id="timelineMeta">6:30 PM · The Olive Grove</p><p id="timelineLocation">Bangalore, India</p></article>
+              <article class="timeline-item"><span class="timeline-marker" aria-hidden="true">✦</span><p class="timeline-date" id="timelineDate">Sunday, November 29, 2026</p><h3 id="timelineTitle">Wedding Reception</h3><p class="timeline-meta" id="timelineMeta">6:00 PM · VGDM Hall</p><p id="timelineLocation">Thazhathangady, Kottayam</p></article>
             </div>
           </div>
         </section>
@@ -380,12 +381,12 @@
         <section class="section venue-section" id="venue">
           <div class="section-inner reveal-scale">
             <div class="venue-panel">
-              <div class="venue-content"><p class="eyebrow">Our gathering place</p><h2 id="venueName">The Olive Grove</h2><p id="venueAddress">Bangalore, India</p><a class="outline-button" id="mapsButton" href="#" target="_blank" rel="noopener" hidden>View on Google Maps <span aria-hidden="true">↗</span></a></div>
+              <div class="venue-content"><p class="eyebrow">Our gathering place</p><h2 id="venueName">VGDM Hall</h2><p id="venueAddress">Thazhathangady, Kottayam</p><a class="outline-button" id="mapsButton" href="https://maps.app.goo.gl/rBNL1b61TUH8w1bG7?g_st=ac" target="_blank" rel="noopener">View on Google Maps <span aria-hidden="true">↗</span></a></div>
             </div>
           </div>
         </section>
       </main>
-      <footer>Made with love for <strong id="footerNames">Ananya &amp; Arjun</strong></footer>
+      <footer>Made with love for <strong id="footerNames">Nabeel &amp; Sulaikha</strong></footer>
     </div>
 
     <div class="music-control">
@@ -401,11 +402,11 @@
     <aside class="studio" id="studio" aria-hidden="true" aria-label="Customize this invitation">
       <div class="studio-panel" role="dialog" aria-modal="true" aria-labelledby="studioTitle">
         <div class="studio-header"><div><p>Invitation studio</p><h2 id="studioTitle">Personalize</h2></div><button class="close-studio" id="closeStudio" type="button" aria-label="Close customizer">×</button></div>
-        <section class="form-section"><h3>The couple</h3><div class="field-grid"><div class="field"><label for="partner1">First name</label><input id="partner1" value="Ananya" /></div><div class="field"><label for="partner2">First name</label><input id="partner2" value="Arjun" /></div></div></section>
-        <section class="form-section"><h3>The celebration</h3><div class="field-grid"><div class="field full"><label for="date">Date</label><input id="date" type="date" value="2026-12-06" /></div><div class="field"><label for="time">Time</label><input id="time" value="6:30 PM" /></div><div class="field"><label for="venueInput">Venue</label><input id="venueInput" value="The Olive Grove" /></div><div class="field full"><label for="location">City / location line</label><input id="location" value="Bangalore, India" /></div></div></section>
+        <section class="form-section"><h3>The couple</h3><div class="field-grid"><div class="field"><label for="partner1">First name</label><input id="partner1" value="Nabeel" /></div><div class="field"><label for="partner2">First name</label><input id="partner2" value="Sulaikha" /></div></div></section>
+        <section class="form-section"><h3>The celebration</h3><div class="field-grid"><div class="field full"><label for="date">Date</label><input id="date" type="date" value="2026-11-29" /></div><div class="field"><label for="time">Time</label><input id="time" value="6:00 PM" /></div><div class="field"><label for="venueInput">Venue</label><input id="venueInput" value="VGDM Hall" /></div><div class="field full"><label for="location">City / location line</label><input id="location" value="Thazhathangady, Kottayam" /></div></div></section>
         <section class="form-section"><h3>Your message</h3><div class="field"><label for="message">Invitation wording</label><textarea id="message">Together with their families, request the pleasure of your company as they begin their next chapter.</textarea></div></section>
-        <section class="form-section"><h3>Optional event details</h3><div class="field-grid"><div class="field"><label for="ceremony">Ceremony title</label><input id="ceremony" placeholder="Leave blank to hide" /></div><div class="field"><label for="ceremonyDetails">Time / venue</label><input id="ceremonyDetails" placeholder="Leave blank to hide" /></div><div class="field"><label for="reception">Reception title</label><input id="reception" placeholder="Leave blank to hide" /></div><div class="field"><label for="receptionDetails">Time / venue</label><input id="receptionDetails" placeholder="Leave blank to hide" /></div></div><p class="form-help">These are intentionally blank because the original invitation did not include ceremony or reception information.</p></section>
-        <section class="form-section"><h3>RSVP &amp; location</h3><div class="field-grid"><div class="field full"><label for="phone">Call number</label><input id="phone" inputmode="tel" placeholder="Add to show call button" /></div><div class="field full"><label for="whatsapp">WhatsApp number</label><input id="whatsapp" inputmode="tel" placeholder="Add to show WhatsApp button" /></div><div class="field full"><label for="mapUrl">Google Maps link</label><input id="mapUrl" type="url" placeholder="Add to show map button" /></div></div><p class="form-help">No contact details or map link existed in the supplied file, so the corresponding public buttons remain hidden until real details are entered.</p></section>
+        <section class="form-section"><h3>Optional event details</h3><div class="field-grid"><div class="field"><label for="ceremony">Ceremony title</label><input id="ceremony" placeholder="Leave blank to hide" /></div><div class="field"><label for="ceremonyDetails">Time / venue</label><input id="ceremonyDetails" placeholder="Leave blank to hide" /></div><div class="field"><label for="reception">Reception title</label><input id="reception" value="Wedding Reception" placeholder="Leave blank to hide" /></div><div class="field"><label for="receptionDetails">Time / venue</label><input id="receptionDetails" value="6:00 PM · VGDM Hall" placeholder="Leave blank to hide" /></div></div><p class="form-help">Reception details are prefilled and can be customized at any time.</p></section>
+        <section class="form-section"><h3>RSVP &amp; location</h3><div class="field-grid"><div class="field full"><label for="phone">Call number</label><input id="phone" inputmode="tel" placeholder="Add to show call button" /></div><div class="field full"><label for="whatsapp">WhatsApp number</label><input id="whatsapp" inputmode="tel" value="8281758087" placeholder="Add to show WhatsApp button" /></div><div class="field full"><label for="mapUrl">Google Maps link</label><input id="mapUrl" type="url" value="https://maps.app.goo.gl/rBNL1b61TUH8w1bG7?g_st=ac" placeholder="Add to show map button" /></div></div><p class="form-help">Guests can message you on WhatsApp or open the venue in Google Maps.</p></section>
         <section class="form-section"><h3>Choose a mood</h3><div class="themes"><button class="theme active" data-theme="midnight" type="button">Midnight</button><button class="theme" data-theme="emerald" type="button">Emerald</button><button class="theme" data-theme="wine" type="button">Wine</button></div></section>
         <div class="studio-actions"><button id="print" type="button">Print / Save PDF</button><button id="reset" type="button">Reset details</button></div>
       </div>
@@ -442,9 +443,9 @@
           text('openingMonogram', `${first.charAt(0)}${second.charAt(0)}`.toUpperCase());
           ['heroDate', 'openingDate', 'detailDate', 'timelineDate'].forEach((id) => text(id, date));
           text('welcomeMessage', v.message || ''); text('detailTime', v.time || 'Time to be announced');
-          text('detailVenue', venue); text('detailLocation', location); text('timelineMeta', [v.time, venue].filter(Boolean).join(' · ')); text('timelineLocation', location);
+          text('detailVenue', venue); text('detailLocation', location); text('timelineTitle', v.reception || v.ceremony || 'Wedding celebration'); text('timelineMeta', [v.time, venue].filter(Boolean).join(' · ')); text('timelineLocation', location);
           text('venueName', venue); text('venueAddress', location); text('footerNames', `${first} & ${second}`);
-          document.title = `${first} & ${second} — Wedding Invitation`;
+          document.title = `${first} & ${second} — Wedding Reception`;
           const ceremony = updateOptionalCard('ceremonyCard', 'ceremonyTitle', 'ceremonyInfo', v.ceremony, v.ceremonyDetails);
           const reception = updateOptionalCard('receptionCard', 'receptionTitle', 'receptionInfo', v.reception, v.receptionDetails);
           $('optionalDetails').hidden = !(ceremony || reception);
@@ -472,7 +473,13 @@
         }
         function countdown() {
           const rawDate = $('date').value; const rawTime = $('time').value;
-          let target = new Date(`${rawDate}T${rawTime}`);
+          const twelveHour = rawTime.trim().match(/^(\d{1,2}):(\d{2})\s*([ap])\.?m\.?$/i);
+          let target;
+          if (twelveHour) {
+            let hours = Number(twelveHour[1]) % 12;
+            if (twelveHour[3].toLowerCase() === 'p') hours += 12;
+            target = new Date(`${rawDate}T${String(hours).padStart(2, '0')}:${twelveHour[2]}:00`);
+          } else target = new Date(`${rawDate}T${rawTime}`);
           if (Number.isNaN(target.getTime())) target = new Date(`${rawDate}T23:59:59`);
           let diff = Math.max(0, target.getTime() - Date.now());
           const units = { days: 86400000, hours: 3600000, minutes: 60000, seconds: 1000 };
