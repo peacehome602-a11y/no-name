@@ -415,7 +415,8 @@
     <script>
       (() => {
         'use strict';
-        const storageKey = 'ever-after-invite';
+        // A versioned key prevents an older browser-only draft from overriding newly published invitation details.
+        const storageKey = 'ever-after-invite-v2';
         const fields = ['partner1', 'partner2', 'date', 'time', 'venueInput', 'location', 'message', 'ceremony', 'ceremonyDetails', 'reception', 'receptionDetails', 'phone', 'whatsapp', 'mapUrl'];
         const $ = (id) => document.getElementById(id);
         const text = (id, value) => { $(id).textContent = value; };
