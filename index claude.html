@@ -196,6 +196,8 @@ a { color: inherit; }
 .hadith-card::after { content: "\201C"; position: absolute; top: -21px; right: 19px; color: rgba(212,178,104,.13); font: 200 150px/.8 var(--display); pointer-events: none; }
 .hadith-card--two { animation-delay: 6s; }
 .hadith-card--three { animation-delay: 12s; }
+.hadith-card--static { position: static; opacity: 1; transform: none; animation: none; }
+.hadith-rotator.single-quote { min-height: 0; }
 .hadith-kicker { margin: 0 0 20px; color: var(--gold); font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
 .hadith-card blockquote { position: relative; z-index: 1; margin: 0; }
 .hadith-card blockquote p { margin: 0; color: var(--ivory); font: 500 clamp(27px, 3.7vw, 43px)/1.08 var(--display); letter-spacing: -.018em; }
@@ -377,18 +379,10 @@ textarea { min-height: 73px; resize: vertical; }
 </div>
 <figcaption>Nabeel &amp; Sulaikha</figcaption>
 </figure>
-<div class="hadith-rotator" aria-label="Quranic reflections on a loving marriage">
-<article class="hadith-card hadith-card--one">
+<div class="hadith-rotator single-quote" aria-label="A Quranic reflection on companionship">
+<article class="hadith-card hadith-card--static">
 <p class="hadith-kicker">A Quranic reflection</p>
-<blockquote><p>From a single soul, God fashioned your spouse, so your heart may find rest.</p><cite><a href="https://quran.com/7/189" target="_blank" rel="noopener">Qur'an, Surah Al-A'raf 7:189</a></cite></blockquote>
-</article>
-<article class="hadith-card hadith-card--two">
-<p class="hadith-kicker">A Quranic reflection</p>
-<blockquote><p>In her presence you find comfort; in yours, she finds her home.</p><cite><a href="https://quran.com/7/189" target="_blank" rel="noopener">Qur'an, Surah Al-A'raf 7:189</a></cite></blockquote>
-</article>
-<article class="hadith-card hadith-card--three">
-<p class="hadith-kicker">A Quranic reflection</p>
-<blockquote><p>Through every season, may this couple turn to God together, always grateful.</p><cite><a href="https://quran.com/7/189" target="_blank" rel="noopener">Qur'an, Surah Al-A'raf 7:189</a></cite></blockquote>
+<blockquote><p>And among His signs, He created you in pairs, so your hearts may find peace in one another.</p><cite><a href="https://quran.com/an-naba/8" target="_blank" rel="noopener">Qur'an, Surah An-Naba 78:8</a></cite></blockquote>
 </article>
 </div>
 </div>
